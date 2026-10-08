@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-snow text-eel font-din dark:bg-night-bg dark:text-white;
+  font-weight: 500;
+}
+
+/* the signature chunky button */
+.btn {
+  @apply inline-flex items-center justify-center rounded-2xl border-b-4 px-6 font-bold uppercase tracking-wide transition-all select-none;
+  height: 50px;
+  letter-spacing: 0.8px;
+}
+.btn:active:not(:disabled) {
+  @apply border-b-0 translate-y-1;
+}
+.btn:disabled {
+  @apply cursor-default bg-swan border-swan text-hare dark:bg-night-border dark:border-night-border dark:text-wolf;
+}
+.btn-green {
+  @apply bg-feather border-feather-dark text-white hover:brightness-105;
+}
+.btn-blue {
+  @apply bg-macaw border-macaw-dark text-white hover:brightness-105;
+}
+.btn-red {
+  @apply bg-cardinal border-cardinal-dark text-white hover:brightness-105;
+}
+.btn-white {
+  @apply bg-snow border-swan border-2 border-b-4 text-macaw hover:bg-polar dark:bg-night-card dark:border-night-border dark:hover:bg-night-border;
+}
+
+/* word-bank tiles and choice cards */
+.tile {
+  @apply rounded-xl border-2 border-b-4 border-swan bg-snow px-4 py-2 font-bold text-eel transition-all select-none cursor-pointer dark:bg-night-card dark:border-night-border dark:text-white;
+}
+.tile:active {
+  @apply border-b-2 translate-y-0.5;
+}
+.tile-selected {
+  @apply border-macaw bg-sky-50 text-macaw dark:bg-night-border;
+}
+.tile-correct {
+  @apply border-feather bg-lime-50 text-feather-dark dark:bg-night-border;
+}
+.tile-wrong {
+  @apply border-cardinal bg-red-50 text-cardinal dark:bg-night-border;
+}
+.tile-ghost {
+  @apply bg-swan border-swan text-transparent cursor-default dark:bg-night-border dark:border-night-border;
+}
+
+::selection {
+  @apply bg-mask-green/40;
+}
